@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.search-box input {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  width: 300px;
+  outline: none;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.search-box input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.search-box button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #e94560;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.search-box button:hover {
+  background: #c73652;
+  transform: scale(1.05);
+}
+
+.weather-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  flex: 1;
+}
+
+.weather-card h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.weather-card img {
+  width: 100px;
+  height: 100px;
+}
+
+.temp {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.desc {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: rgba(255,255,255,0.8);
+}
+
+.error {
+  color: #e94560;
+  background: rgba(233,69,96,0.1);
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.forecast-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  margin-top: 1.5rem;
+  flex: 2;
+}
+
+.forecast-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255,255,255,0.9);
+}
+.date {
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+}
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.detail-icon {
+  font-size: 1.5rem;
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detail-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+/* Desktop layout - side by side */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* On big screens, put them side by side */
+@media (min-width: 900px) {
+  .cards-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .app {
+    max-width: 1100px;
+  }
+
+  .forecast-card {
+    margin-top: 0;
+  }
+}
+
+.location-btn {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  backdrop-filter: blur(10px);
+}
+
+.location-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.05);
+}
+.history {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.history-btn {
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  backdrop-filter: blur(10px);
+}
+
+.history-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+.unit-toggle {
+  padding: 8px 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  backdrop-filter: blur(10px);
+  margin-bottom: 1.5rem;
+}
+
+.unit-toggle:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+
