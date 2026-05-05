@@ -32,7 +32,7 @@ function App() {
 
   const fetchWeather = async () => {
     try {
-      const weatherRes = await axios.get(`http://localhost:5000/weather/${city}`);
+      const weatherRes = await axios.get(`https://weather-app-backend-d1r4.onrender.com/weather/${city}`);
       setWeather(weatherRes.data);
 
       setHistory(prev => {
@@ -40,7 +40,7 @@ function App() {
         return updated.slice(0, 5);
       });
 
-      const forecastRes = await axios.get(`http://localhost:5000/forecast/${city}`);
+      const forecastRes = await axios.get(`https://weather-app-backend-d1r4.onrender.com/forecast/${city}`);
       setForecast(forecastRes.data);
 
       setError('');
@@ -60,11 +60,11 @@ function App() {
       async (position) => {
         const { latitude, longitude } = position.coords;
         try {
-          const weatherRes = await axios.get(`http://localhost:5000/weather/coords?lat=${latitude}&lon=${longitude}`);
+          const weatherRes = await axios.get(`https://weather-app-backend-d1r4.onrender.com/weather/coords?lat=${latitude}&lon=${longitude}`);
           setWeather(weatherRes.data);
           setCity(weatherRes.data.city);
 
-          const forecastRes = await axios.get(`http://localhost:5000/forecast/coords?lat=${latitude}&lon=${longitude}`);
+          const forecastRes = await axios.get(`https://weather-app-backend-d1r4.onrender.com/forecast/coords?lat=${latitude}&lon=${longitude}`);
           setForecast(forecastRes.data);
 
           setError('');
