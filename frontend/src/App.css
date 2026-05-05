@@ -12,12 +12,12 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .app {
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   width: 100%;
   max-width: 600px;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -75,6 +75,7 @@ h1 {
   border: 1px solid rgba(255,255,255,0.2);
   box-shadow: 0 8px 32px rgba(0,0,0,0.3);
   flex: 1;
+  overflow: hidden;
 }
 
 .weather-card h2 {
